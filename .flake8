@@ -1,0 +1,9 @@
+[flake8]
+ignore = D202, D203, E203, W503
+max-line-length = 120
+exclude =
+    .git,
+    env,
+    __pycache__,
+    alembic
+max-complexity = 15

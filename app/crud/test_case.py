@@ -3,8 +3,8 @@ from app.models.test_case import TestCase
 from app.schemas import TestCaseCreate, TestCaseUpdate
 
 
-class CRUDTest(CRUDBase[TestCase, TestCaseCreate, TestCaseUpdate]):
+class CRUDTestCase(CRUDBase[TestCase, TestCaseCreate, TestCaseUpdate]):
     pass
 
 
-crud_test_case = CRUDTest(TestCase)
+crud_test_case = CRUDTestCase(TestCase)

@@ -24,7 +24,8 @@ async def add_bind_test_release(params: BindTestReleaseCreate, db: AsyncSession 
 
 
 @router.put('/{id_bind_test_release}', response_model=StrictBool)
-async def upd_bind_test_release(id_bind_test_release: int, params: BindTestReleaseUpdate, db: AsyncSession = Depends(get_db)):
+async def upd_bind_test_release(id_bind_test_release: int, params: BindTestReleaseUpdate,
+                                db: AsyncSession = Depends(get_db)):
     obj = await crud_bind_test_release.get(db, BindTestRelease.id_bind_test_release == id_bind_test_release)
     await crud_bind_test_release.update(db, db_obj=obj, obj_in=params)
     return True

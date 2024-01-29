@@ -5,5 +5,5 @@ exclude =
     .git,
     env,
     __pycache__,
-    alembic
+    alembic/
 max-complexity = 15

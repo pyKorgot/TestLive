@@ -24,7 +24,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
 
     async def get(self, db: AsyncSession, *args) -> Optional[ModelType]:
         return (await db.execute(select(self.model).filter(*args))).scalars().one()
-    
+
     async def get_multi(self, db: AsyncSession, *args) -> Optional[list[ModelType]]:
         return (await db.execute(select(self.model).filter(*args))).scalars()
 

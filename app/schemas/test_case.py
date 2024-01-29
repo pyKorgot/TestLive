@@ -14,6 +14,7 @@ class TestCaseCreate(BaseModel):
     id_test_plan: int
     name: str
 
+
 class TestCaseUpdate(BaseModel):
     id_test_plan: int
     name: str

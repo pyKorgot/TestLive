@@ -1,4 +1,4 @@
-from .bind_test_release import (BindTestReleaseCreate, BindTestReleaseDBQuery,
+from .bind_test_release import (BindTestReleaseCreate, BindTestReleaseDBQuery,  # noqa: F401
                                 BindTestReleaseUpdate)  # noqa: F401
 from .release import ReleaseCreate, ReleaseDBQuery, ReleaseUpdate  # noqa: F401
 from .test_case import TestCaseCreate, TestCaseDBQuery, TestCaseUpdate  # noqa: F401

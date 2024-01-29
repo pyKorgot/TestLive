@@ -26,4 +26,5 @@ class Settings(BaseSettings):
             path=f"{values.get('POSTGRES_DB') or ''}",
         )
 
+
 settings = Settings()

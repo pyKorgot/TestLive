@@ -19,4 +19,6 @@ class TestStepCreate(BaseModel):
 
 
 class TestStepUpdate(BaseModel):
-    ...
+    id_test_case: int
+    playback: str
+    excepted: str

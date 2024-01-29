@@ -3,8 +3,8 @@ from app.models.test_plan import TestPlan
 from app.schemas import TestPlanCreate, TestPlanUpdate
 
 
-class CRUDTest(CRUDBase[TestPlan, TestPlanCreate, TestPlanUpdate]):
+class CRUDTestPlan(CRUDBase[TestPlan, TestPlanCreate, TestPlanUpdate]):
     pass
 
 
-crud_test_plan = CRUDTest(TestPlan)
+crud_test_plan = CRUDTestPlan(TestPlan)

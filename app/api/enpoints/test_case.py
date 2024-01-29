@@ -14,7 +14,7 @@ router = APIRouter(prefix='/test_case', tags=['Test Case'])
 
 @router.get('/', response_model=list[TestCaseDBQuery])
 async def get_test_case(id_test_plan: Optional[int] = None, db: AsyncSession = Depends(get_db)):
-    res = await crud_test_case.get(db, TestCase.id_test_plan == id_test_plan)
+    res = await crud_test_case.get_multi(db, TestCase.id_test_plan == id_test_plan)
     return res
 
 

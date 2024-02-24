@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.api.deps import get_db
 from app.crud import crud_test_plan
 from app.models.test_plan import TestPlan
-from app.schemas import TestPlanCreate, TestPlanDBQuery, TestPlanUpdate
+from app.schemas import TestPlanCreate, TestPlanDBQuery, TestPlanUpdate, TestPlanObj
 
 router = APIRouter(prefix='/test_plan', tags=['Test Plan'])
 
@@ -15,6 +15,18 @@ router = APIRouter(prefix='/test_plan', tags=['Test Plan'])
 @router.get('/', response_model=list[TestPlanDBQuery])
 async def get_test_plan(id_parent: Optional[int] = None, db: AsyncSession = Depends(get_db)):
     return await crud_test_plan.get_multi(db, TestPlan.id_parent == id_parent)
+
+
+# @router.get('/test_plan_test_case')
+# async def get_test_plan_case(id_parent: Optional[int], db: AsyncSession = Depends(get_db));
+
+
+# @router.get('/get_all')
+# async def get_all_test_plan(db: AsyncSession = Depends(get_db)):
+#     all_test_plan = await crud_test_plan.get_multi(db)
+#     tree = {}
+#     for test_plan in all_test_plan:
+#         tree[test_plan.id_test_plan] = test_plan
 
 
 @router.post('/', response_model=StrictBool)

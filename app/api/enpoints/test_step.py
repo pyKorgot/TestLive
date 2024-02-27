@@ -10,7 +10,7 @@ from app.schemas import TestStepCreate, TestStepDBQuery, TestStepUpdate
 router = APIRouter(prefix='/test_step', tags=['Test Step'])
 
 
-@router.get('/{id_test_case}', response_model=list[TestStepDBQuery])
+@router.get('/', response_model=list[TestStepDBQuery])
 async def get_test_plan(id_test_case: int, db: AsyncSession = Depends(get_db)):
     return await crud_test_step.get_multi(db, TestStep.id_test_case == id_test_case)
 

@@ -1,8 +1,8 @@
-"""tables
+"""add_tables
 
-Revision ID: c82eb05999b2
+Revision ID: 119bed902ced
 Revises: 530e937322f3
-Create Date: 2024-01-29 19:18:06.300447
+Create Date: 2024-02-29 19:14:46.734919
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'c82eb05999b2'
+revision: str = '119bed902ced'
 down_revision: Union[str, None] = '530e937322f3'
 
 
@@ -73,6 +73,8 @@ def upgrade() -> None:
     op.create_table('t_test_step',
     sa.Column('id_test_step', sa.Integer(), nullable=False, comment='ID'),
     sa.Column('id_test_case', sa.Integer(), nullable=True, comment='ID Test Case'),
+    sa.Column('number_step', sa.Integer(), nullable=True, comment='Number Step'),
+    sa.Column('name_step', sa.Text(), nullable=True, comment='Name Step'),
     sa.Column('playback', sa.Text(), nullable=True, comment='Playback Steps'),
     sa.Column('excepted', sa.Text(), nullable=True, comment='Excepted Result'),
     sa.ForeignKeyConstraint(['id_test_case'], ['tests.t_test_case.id_test_case'], ),

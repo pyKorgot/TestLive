@@ -25,9 +25,3 @@ class TestPlanCreate(BaseModel):
 class TestPlanUpdate(BaseModel):
     name: str
     id_parent: Optional[int]
-
-
-class TestPlanObj(BaseModel):
-    label: str
-    key: int
-    children: Optional[list]

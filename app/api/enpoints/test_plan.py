@@ -17,18 +17,6 @@ async def get_test_plan(id_parent: Optional[int] = None, db: AsyncSession = Depe
     return await crud_test_plan.get_multi(db, TestPlan.id_parent == id_parent)
 
 
-# @router.get('/test_plan_test_case')
-# async def get_test_plan_case(id_parent: Optional[int], db: AsyncSession = Depends(get_db));
-
-
-# @router.get('/get_all')
-# async def get_all_test_plan(db: AsyncSession = Depends(get_db)):
-#     all_test_plan = await crud_test_plan.get_multi(db)
-#     tree = {}
-#     for test_plan in all_test_plan:
-#         tree[test_plan.id_test_plan] = test_plan
-
-
 @router.post('/', response_model=StrictBool)
 async def add_test_plan(params: TestPlanCreate, db: AsyncSession = Depends(get_db)):
     await crud_test_plan.create(db, obj_in=params)

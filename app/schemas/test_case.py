@@ -1,10 +1,4 @@
 from pydantic import BaseModel, computed_field
-from typing import Optional
-
-
-# def key_from_id(val):
-#     print(val)
-#     return val
 
 
 class TestCaseDBQuery(BaseModel):
@@ -19,7 +13,6 @@ class TestCaseDBQuery(BaseModel):
 
     class Config:
         orm_mode = True
-    
 
 
 class TestCaseCreate(BaseModel):

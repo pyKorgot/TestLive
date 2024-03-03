@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.api.deps import get_db
 from app.crud import crud_test_plan
 from app.models.test_plan import TestPlan
-from app.schemas import TestPlanCreate, TestPlanDBQuery, TestPlanUpdate, TestPlanObj
+from app.schemas import TestPlanCreate, TestPlanDBQuery, TestPlanUpdate
 
 router = APIRouter(prefix='/test_plan', tags=['Test Plan'])
 

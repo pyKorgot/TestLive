@@ -4,3 +4,4 @@ from .test_case import TestCase  # noqa: F401
 from .test_plan import TestPlan  # noqa: F401
 from .test_status import TestStatus  # noqa: F401
 from .test_step import TestStep  # noqa: F401
+from .organization import Organization  # noqa: F401
